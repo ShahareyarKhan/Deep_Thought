@@ -1,8 +1,12 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
+body{
+    margin-bottom: 40px;
+}
 nav {
     width: 100%;
     box-shadow: 1px 3px 6px rgb(140, 140, 140);
@@ -28,15 +32,21 @@ nav {
     flex-direction: column;
 
 }
-
+.container{
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
 .left {
     width: 100px;
-    height: 400px;
+    height: 80vh;
     background: #ffffff;
     box-shadow: 1px 3px 6px rgb(140, 140, 140);
     border-radius: 0px 20px 20px 0px;
 }
-.left-1{
+
+.left-1 {
     border: 1px solid #0029FF;
     width: 50px;
     height: 50px;
@@ -50,14 +60,17 @@ nav {
     font-size: 30px;
     font-weight: 700;
 }
+
 .center {
     width: 100%;
     margin: 0px 40px;
+    max-width: 900px;
 }
 
 .right {
+    right: 0;
     width: 50px;
-    height: 400px;
+    height: 50vh;
     background: #000;
     margin-top: 20px;
     border-radius: 20px 0px 0px 20px;
@@ -70,7 +83,7 @@ nav {
     align-items: center;
 }
 
-.border{
+.border {
     height: 40px;
     background: #000;
     border-radius: 0px 20px 0px 0px;
@@ -86,31 +99,184 @@ nav {
 .head h1 {
     /* font-family: Arial, Helvetica, sans-serif; */
     font-size: 20px;
-    font-family:sans-serif ;
+    font-family: sans-serif;
     font-weight: bold;
     color: #1900ff;
-    padding: 20px;
 }
 
-.head button {
+.head button, button {
     background: #3053ffe4;
     border: none;
     border-radius: 10px;
     color: white;
+    transition: 0.6s all ease-in;
     width: 100px;
     height: 36px;
+}
 
+.head button:hover {
+    background: #163bf3e4;
+    box-shadow: 2px 3px 6px rgb(21, 72, 255) inset, -2px -3px 6px rgb(21, 72, 255) inset ;
+    
 }
 
 .container {
     width: 100%;
     display: flex;
 }
+.sidebar {
+    position: absolute;
+    top: 77px;
+    left: -100%; 
+    height: 100%;
+    background-color: #ffffff;
+    color: white;
+    transition: left 0.5s;
+    border-radius: 0px 20px 20px 0px;
+    z-index: 1000;
+    box-shadow: 3px 3px 7px gray, -3px -3px 7px gray;
+}
 
+.sidebar > div:nth-child(1){
+    padding: 15px;
+    border-radius: 0px 20px 0px 0px;
+    background: #000;
+}
+.sidebar >div:nth-child(2){
+    padding: 15px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.sidebar.visible {
+    left: 0; 
+}
 .cross {
     margin-bottom: 20px;
 }
 
 .B {
     margin-top: 10px;
+}
+
+.para{
+    margin-top: 50px;
+}
+
+.para p{
+    margin-top: 10px;
+}
+
+.box{
+    display: flex;
+    justify-content: space-between;
+}
+
+.box > div{
+    width: 48%;
+    /* height: 70vh; */
+    background: #ffffff;
+    margin-top: 50px;
+    box-shadow: 3px 3px 7px gray, -3px -3px 7px gray;
+    border-radius: 10px;    
+}
+
+@media only screen and (max-width: 800px) {
+    .box{
+        flex-direction: column;
+    }
+    .box > div{
+        width: 100%;         
+    }
+}
+.box-1{
+    position: relative;
+}
+.box-1-1{
+    background: #000;
+    color: white;
+    padding: 12px;
+    border-radius: 10px 10px 0px 0px;
+    text-align: center;
+    font-size: small;
+}
+
+.i-btn{
+    position: absolute;
+    right: 20px;
+    top: 8px;
+}
+
+.description{
+    padding: 20px;
+    border-bottom: 1px solid rgb(175, 175, 175);
+}
+
+.subthreads{
+    display: flex;
+    padding: 20px;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+textarea{
+    height: 90px;
+    resize: none;
+    padding: 3px;
+    width: 100%;
+    border: 0px;
+    margin-top: 6px;
+    box-shadow: 1px 1px 3px rgb(183, 183, 183),-1px -1px 3px rgb(183, 183, 183);
+}
+
+.icon-block{
+    display: flex;
+    justify-content: end;
+    padding: 10px 20px;
+    align-items: center;
+    gap: 10px;
+}
+
+select{
+    padding: 6px;
+    border: 0px;
+    box-shadow: 1px 1px 3px rgb(183, 183, 183),-1px -1px 3px rgb(183, 183, 183);
+}
+
+.threadbtn{
+    margin: 20px;
+}
+
+#txt{
+    margin-top: 5px;
+}
+
+.icon-block-2{
+    display: flex;
+    padding: 10px 20px;
+    gap: 10px;
+    align-items: center;
+}
+
+.bottom-block{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.bottom-block >div{
+    background: #0033eb;
+    margin: 10px;
+    width: 30px;
+    padding: 20px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.img{
+    width: 100%;
 }
